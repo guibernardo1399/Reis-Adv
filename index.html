@@ -814,17 +814,13 @@
     }
 
     .about-visual {
-      background: var(--ivory);
+      background: var(--navy-deep);
       border: 1px solid var(--border);
       border-radius: 6px;
-      aspect-ratio: 4/5;
+      min-height: 420px;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
-      gap: 12px;
-      text-align: center;
-      padding: 0;
       position: relative;
       overflow: hidden;
     }
@@ -1308,8 +1304,7 @@
       }
 
       .about-visual {
-        aspect-ratio: 16/9;
-        max-height: 380px;
+        min-height: 300px;
       }
     }
 
@@ -1387,8 +1382,7 @@
       }
 
       .about-visual {
-        aspect-ratio: 16/9;
-        max-height: 300px;
+        min-height: 240px;
       }
 
       .content-grid {
@@ -1496,7 +1490,7 @@
         <div class="hero-content">
           <p class="hero-eyebrow">Direito Trabalhista · Belém/PA</p>
           <h1>Problemas no trabalho, demissão ou verbas não pagas? <em>Entenda seus direitos</em> antes de tomar qualquer decisão.</h1>
-          <p class="hero-sub">O Reis Advogados Associados atua em Direito Trabalhista, orientando trabalhadores em Belém e em todo o Brasil com análise técnica, atendimento claro e responsabilidade jurídica.</p>
+          <p class="hero-sub">O Reis Advogados Associados atua em Direito Trabalhista, orientando trabalhadores com análise técnica, atendimento claro e responsabilidade jurídica.</p>
           <div class="hero-actions">
             <a href="https://wa.me/5591981088887?text=Ol%C3%A1%2C%20gostaria%20de%20enviar%20meu%20caso%20trabalhista%20para%20orienta%C3%A7%C3%A3o."
               class="btn-wa" target="_blank" rel="noopener" aria-label="Enviar meu caso pelo WhatsApp">
@@ -1757,7 +1751,7 @@
         </div>
         <div class="about-visual fade-up d2">
           <img src="team.png" alt="Equipe Reis Advogados Associados"
-            style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px;">
+            style="width: 100%; height: 100%; object-fit: contain; display: block;">
         </div>
       </div>
     </section>
