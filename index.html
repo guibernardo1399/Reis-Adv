@@ -255,7 +255,7 @@
     /* ── HERO ────────────────────────────────── */
     .hero {
       background: var(--navy-deep);
-      padding: 152px 24px 96px;
+      padding: 164px 24px 112px;
       position: relative;
       overflow: hidden;
     }
@@ -266,8 +266,48 @@
       inset: 0;
       pointer-events: none;
       background:
-        radial-gradient(ellipse 55% 70% at 100% 40%, rgba(196, 169, 106, 0.09) 0%, transparent 65%),
-        radial-gradient(ellipse 40% 55% at 0% 90%, rgba(26, 51, 96, 0.55) 0%, transparent 60%);
+        radial-gradient(ellipse 60% 80% at 100% 35%, rgba(196, 169, 106, 0.12) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 60% at 0% 95%, rgba(26, 51, 96, 0.6) 0%, transparent 60%),
+        radial-gradient(ellipse 30% 40% at 50% 0%, rgba(196, 169, 106, 0.04) 0%, transparent 70%);
+    }
+
+    /* ── AUTHORITY BAR ───────────────────────── */
+    .hero-authority {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 24px;
+    }
+
+    .auth-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 20px 0 0;
+      margin-right: 20px;
+      border-right: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.65);
+      font-size: 12.5px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .auth-item:last-child {
+      border-right: none;
+      margin-right: 0;
+      padding-right: 0;
+    }
+
+    .auth-item::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
     }
 
     .hero-inner {
@@ -302,12 +342,12 @@
 
     .hero h1 {
       font-family: var(--font-display);
-      font-size: clamp(30px, 3.8vw, 50px);
+      font-size: clamp(28px, 3.6vw, 48px);
       font-weight: 600;
-      line-height: 1.18;
-      letter-spacing: -0.01em;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
       color: #fff;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .hero h1 em {
@@ -359,20 +399,29 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: var(--whatsapp);
+      background: var(--navy-mid);
       color: #fff;
       text-decoration: none;
       font-size: 15px;
       font-weight: 600;
-      padding: 14px 24px;
+      padding: 14px 26px;
       border-radius: 8px;
+      border: 1px solid rgba(196,169,106,0.3);
       transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
     }
 
     .btn-wa:hover {
-      background: var(--whatsapp-dk);
+      background: #24385e;
       transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(37, 211, 102, 0.28);
+      box-shadow: 0 10px 28px rgba(11, 31, 58, 0.35);
+    }
+
+    .btn-wa .wa-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--whatsapp);
+      border-radius: 50%;
+      flex-shrink: 0;
     }
 
     .btn-ghost {
@@ -507,16 +556,16 @@
     .prob-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-top: 3px solid transparent;
-      border-radius: 3px;
-      padding: 26px 22px;
+      border-top: 2px solid transparent;
+      border-radius: 6px;
+      padding: 28px 24px;
       transition: border-top-color 0.25s, transform 0.2s, box-shadow 0.2s;
     }
 
     .prob-card:hover {
       border-top-color: var(--navy);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 28px rgba(11, 31, 58, 0.08);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(11, 31, 58, 0.1);
     }
 
     .prob-icon {
@@ -607,16 +656,16 @@
     .area-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-top: 3px solid transparent;
-      border-radius: 3px;
-      padding: 22px 18px;
-      transition: border-top-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      border-left: 2px solid transparent;
+      border-radius: 6px;
+      padding: 24px 20px;
+      transition: border-left-color 0.2s, transform 0.2s, box-shadow 0.2s;
     }
 
     .area-card:hover {
-      border-top-color: var(--gold);
+      border-left-color: var(--gold);
       transform: translateY(-2px);
-      box-shadow: 0 6px 22px rgba(11, 31, 58, 0.07);
+      box-shadow: 0 8px 24px rgba(11, 31, 58, 0.09);
     }
 
     .area-icon {
@@ -744,7 +793,7 @@
 
     .about-stats {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 14px;
       margin-top: 36px;
     }
@@ -776,7 +825,7 @@
     .about-visual {
       background: var(--ivory);
       border: 1px solid var(--border);
-      border-radius: 3px;
+      border-radius: 6px;
       aspect-ratio: 4/5;
       display: flex;
       align-items: center;
@@ -784,7 +833,7 @@
       flex-direction: column;
       gap: 12px;
       text-align: center;
-      padding: 40px;
+      padding: 0;
       position: relative;
       overflow: hidden;
     }
@@ -1070,7 +1119,7 @@
       text-decoration: none;
       font-size: 15px;
       font-weight: 600;
-      padding: 16px 28px;
+      padding: 16px 30px;
       border-radius: 8px;
       transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
     }
@@ -1078,7 +1127,37 @@
     .btn-wa-lg:hover {
       background: var(--whatsapp-dk);
       transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(37, 211, 102, 0.22);
+      box-shadow: 0 12px 32px rgba(37, 211, 102, 0.3);
+    }
+
+    /* ── MOBILE BOTTOM BAR ───────────────────── */
+    .mobile-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 150;
+      padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--border);
+      box-shadow: 0 -4px 18px rgba(11, 31, 58, 0.1);
+    }
+
+    .mobile-bar a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--whatsapp);
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px;
+      border-radius: 10px;
+      width: 100%;
     }
 
     /* ── FOOTER ──────────────────────────────── */
@@ -1234,10 +1313,24 @@
       }
     }
 
+    /* ── TABLET ──────────────────────────────── */
+    @media (max-width: 900px) {
+      .about-inner {
+        grid-template-columns: 1fr;
+        padding: 0 24px;
+        gap: 40px;
+      }
+
+      .about-visual {
+        aspect-ratio: 16/9;
+        max-height: 380px;
+      }
+    }
+
     @media (max-width: 768px) {
       :root {
-        --sp-lg: 64px;
-        --sp-md: 48px;
+        --sp-lg: 72px;
+        --sp-md: 52px;
       }
 
       .main-nav,
@@ -1250,7 +1343,11 @@
       }
 
       .hero {
-        padding: 128px 20px 64px;
+        padding: 120px 20px 72px;
+      }
+
+      .hero h1 {
+        font-size: clamp(26px, 7vw, 36px);
       }
 
       .hero-inner {
@@ -1262,12 +1359,35 @@
         display: none;
       }
 
+      .hero-authority {
+        gap: 0;
+        row-gap: 10px;
+      }
+
+      .auth-item {
+        font-size: 11.5px;
+        padding-right: 14px;
+        margin-right: 14px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-wa, .btn-ghost {
+        justify-content: center;
+        text-align: center;
+      }
+
       .problems-grid {
         grid-template-columns: 1fr 1fr;
+        gap: 14px;
       }
 
       .areas-grid {
         grid-template-columns: 1fr 1fr;
+        gap: 14px;
       }
 
       .steps-grid {
@@ -1277,11 +1397,12 @@
       .about-inner {
         grid-template-columns: 1fr;
         padding: 0 20px;
-        gap: 48px;
+        gap: 36px;
       }
 
       .about-visual {
-        display: none;
+        aspect-ratio: 16/9;
+        max-height: 300px;
       }
 
       .content-grid {
@@ -1293,6 +1414,13 @@
         gap: 36px;
       }
 
+      .mobile-bar {
+        display: block;
+      }
+
+      body {
+        padding-bottom: 74px;
+      }
     }
 
     @media (max-width: 540px) {
@@ -1313,7 +1441,14 @@
       }
 
       .about-stats {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .auth-item {
+        border-right: none;
+        padding-right: 0;
+        margin-right: 0;
+        width: 50%;
       }
     }
   </style>
@@ -1378,33 +1513,30 @@
       <div class="hero-inner">
         <div class="hero-content">
           <p class="hero-eyebrow">Direito Trabalhista · Belém/PA</p>
-          <h1>Advocacia Trabalhista para proteger seus direitos com <em>clareza, estratégia</em> e segurança.</h1>
-          <p class="hero-sub">O Reis Advogados Associados atua na orientação e defesa de trabalhadores em Belém e em
-            todo o Brasil, com atendimento técnico, próximo e responsável.</p>
-          <ul class="hero-proof" aria-label="Diferenciais do escritório">
-            <li>10 anos de atuação na Justiça do Trabalho</li>
-            <li>Atendimento em Belém e online para todo o Brasil</li>
-            <li>Especialização em Direito Trabalhista</li>
-          </ul>
+          <h1>Problemas no trabalho, demissão ou verbas não pagas? <em>Entenda seus direitos</em> antes de tomar qualquer decisão.</h1>
+          <p class="hero-sub">O Reis Advogados Associados atua em Direito Trabalhista, orientando trabalhadores em Belém e em todo o Brasil com análise técnica, atendimento claro e responsabilidade jurídica.</p>
           <div class="hero-actions">
-            <a href="https://wa.me/5591981088887?text=Ol%C3%A1%2C%20gostaria%20de%20entender%20meu%20caso%20trabalhista."
-              class="btn-wa" target="_blank" rel="noopener" aria-label="Falar com o escritório pelo WhatsApp">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-              </svg>
-              Falar com o escritório pelo WhatsApp
+            <a href="https://wa.me/5591981088887?text=Ol%C3%A1%2C%20gostaria%20de%20enviar%20meu%20caso%20trabalhista%20para%20orienta%C3%A7%C3%A3o."
+              class="btn-wa" target="_blank" rel="noopener" aria-label="Enviar meu caso pelo WhatsApp">
+              <span class="wa-dot"></span>
+              Enviar meu caso pelo WhatsApp
             </a>
             <a href="https://www.instagram.com/reis_adv/" class="btn-ghost" target="_blank" rel="noopener"
-              aria-label="Acompanhar no Instagram">
+              aria-label="Ver orientações no Instagram">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 aria-hidden="true">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                 <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
               </svg>
-              Acompanhar no Instagram
+              Ver orientações no Instagram
             </a>
+          </div>
+          <div class="hero-authority" aria-label="Informações do escritório">
+            <span class="auth-item">10 anos na Justiça do Trabalho</span>
+            <span class="auth-item">Atendimento em Belém/PA e online</span>
+            <span class="auth-item">Foco em Direito Trabalhista</span>
+            <span class="auth-item">Orientação para trabalhadores</span>
           </div>
         </div>
         <div class="hero-visual" aria-hidden="true">
@@ -1422,9 +1554,7 @@
         <div class="section-head fade-up">
           <span class="eyebrow">Situações comuns</span>
           <h2>Situações trabalhistas que merecem atenção</h2>
-          <p>Nem todo trabalhador sabe identificar quando seus direitos foram desrespeitados. Uma demissão mal
-            calculada, horas extras não pagas, pressão excessiva, assédio ou falta de registro podem gerar prejuízos que
-            passam despercebidos.</p>
+          <p>Quando há demissão, atraso de pagamento, jornada excessiva, assédio ou vínculo irregular, o trabalhador nem sempre sabe se seus direitos foram respeitados. A análise correta evita decisões precipitadas e ajuda a entender quais caminhos são possíveis.</p>
         </div>
         <div class="problems-grid">
           <div class="prob-card fade-up">
@@ -1494,9 +1624,7 @@
         <div class="solution-box fade-up">
           <span class="eyebrow">Como o escritório pode ajudar</span>
           <h2>Orientação jurídica antes da decisão</h2>
-          <p>O atendimento começa pela escuta e análise cuidadosa do caso. Antes de qualquer medida, o escritório avalia
-            informações, documentos e possíveis caminhos para que o trabalhador tome uma decisão com clareza e
-            segurança.</p>
+          <p>O atendimento começa pela escuta e pela análise do contexto. Antes de qualquer medida, o escritório avalia a situação, os documentos disponíveis, os riscos e os possíveis caminhos jurídicos. A ideia é que o trabalhador entenda o cenário antes de tomar uma decisão.</p>
           <a href="https://wa.me/5591981088887?text=Ol%C3%A1%2C%20quero%20entender%20meu%20caso%20trabalhista."
             class="btn-outline" target="_blank" rel="noopener">
             Quero entender meu caso
@@ -1513,7 +1641,7 @@
     <section class="areas section-pad" id="areas">
       <div class="container">
         <div class="section-head fade-up">
-          <span class="eyebrow">Especialização</span>
+          <span class="eyebrow">Áreas de atuação</span>
           <h2>Atuação em Direito Trabalhista</h2>
         </div>
         <div class="areas-grid">
@@ -1602,28 +1730,28 @@
         <div class="section-head fade-up">
           <span class="eyebrow" style="color:var(--gold)">Processo de atendimento</span>
           <h2>Como funciona o primeiro contato</h2>
-          <p>Um processo direto, sem burocracia e pensado para quem está em dúvida sobre seus direitos.</p>
+          <p>Você não precisa chegar com tudo pronto. O primeiro contato serve para entender a situação, organizar as informações principais e indicar quais documentos podem ser relevantes.</p>
         </div>
         <div class="steps-grid">
           <div class="step fade-up">
             <div class="step-num" aria-hidden="true">1</div>
-            <h3>Você envia uma mensagem</h3>
-            <p>Pelo WhatsApp, explique brevemente sua situação de trabalho e o que está acontecendo.</p>
+            <h3>Você conta o que aconteceu</h3>
+            <p>Pelo WhatsApp, descreva brevemente sua situação de trabalho sem precisar ter tudo organizado.</p>
           </div>
           <div class="step fade-up d1">
             <div class="step-num" aria-hidden="true">2</div>
-            <h3>A equipe entende o caso</h3>
-            <p>A equipe compreende o problema e solicita as informações essenciais para análise.</p>
+            <h3>A equipe identifica os pontos principais</h3>
+            <p>A equipe analisa o relato e solicita as informações e documentos mais relevantes para o caso.</p>
           </div>
           <div class="step fade-up d2">
             <div class="step-num" aria-hidden="true">3</div>
-            <h3>Análise técnica responsável</h3>
-            <p>O caso é analisado com atenção técnica e cuidado com os detalhes do seu contexto.</p>
+            <h3>O caso passa por análise técnica</h3>
+            <p>A situação é avaliada com atenção técnica e cuidado com o contexto específico de cada trabalhador.</p>
           </div>
           <div class="step fade-up d3">
             <div class="step-num" aria-hidden="true">4</div>
-            <h3>Orientação sobre os caminhos</h3>
-            <p>Você recebe uma orientação clara sobre os possíveis encaminhamentos e próximas etapas.</p>
+            <h3>Você recebe orientação sobre os próximos caminhos</h3>
+            <p>Com a análise concluída, o escritório apresenta os possíveis encaminhamentos com clareza.</p>
           </div>
         </div>
       </div>
@@ -1643,12 +1771,11 @@
             <div class="stat"><strong>10 anos</strong><span>de atuação na Justiça do Trabalho</span></div>
             <div class="stat"><strong>Belém/PA</strong><span>sede e atendimento presencial</span></div>
             <div class="stat"><strong>Todo o Brasil</strong><span>atendimento online em qualquer estado</span></div>
-            <div class="stat"><strong>Instagram</strong><span>conteúdos educativos para trabalhadores</span></div>
           </div>
         </div>
-        <div class="about-visual fade-up d2" style="padding: 0;">
+        <div class="about-visual fade-up d2">
           <img src="team.png" alt="Equipe Reis Advogados Associados"
-            style="width: 100%; height: 100%; object-fit: cover;">
+            style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px;">
         </div>
       </div>
     </section>
@@ -1674,9 +1801,8 @@
       <div class="container">
         <div class="section-head fade-up">
           <span class="eyebrow">No Instagram</span>
-          <h2>Direitos trabalhistas explicados com clareza</h2>
-          <p>O escritório compartilha orientações, conteúdos educativos e informações sobre situações comuns da vida do
-            trabalhador.</p>
+          <h2>Acompanhe orientações trabalhistas antes que o problema vire prejuízo</h2>
+          <p>No Instagram, o escritório publica conteúdos sobre demissão, verbas rescisórias, jornada de trabalho, assédio moral, acidente de trabalho e dúvidas comuns de trabalhadores.</p>
         </div>
         <div class="content-grid">
           <a href="https://www.instagram.com/reis_adv/" class="content-card fade-up" target="_blank" rel="noopener"
@@ -1742,7 +1868,7 @@
               <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
             </svg>
-            Acompanhar o Reis Advogados Associados no Instagram
+            Ver conteúdos no Instagram
           </a>
         </div>
       </div>
@@ -1851,26 +1977,17 @@
       <div class="cta-inner fade-up">
         <span class="eyebrow">Fale com o escritório</span>
         <h2>Tem uma dúvida trabalhista e não sabe por onde começar?</h2>
-        <p>Envie uma mensagem para o escritório e explique brevemente sua situação. A equipe irá orientar os próximos
-          passos com responsabilidade e clareza.</p>
-        <p class="cta-micro">Atendimento com responsabilidade e clareza. Belém/PA e todo o Brasil.</p>
+        <p>Envie uma mensagem para o escritório e descreva brevemente sua situação. A equipe analisa o caso e orienta os próximos caminhos com responsabilidade e clareza.</p>
+        <p class="cta-micro">Sem urgência excessiva. Sem promessas de resultado. Belém/PA e todo o Brasil.</p>
         <div class="cta-actions">
           <a href="https://wa.me/5591981088887?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida%20trabalhista%20e%20gostaria%20de%20orienta%C3%A7%C3%A3o."
             class="btn-wa-lg" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-            </svg>
-            Falar com o Reis Advogados Associados pelo WhatsApp
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Falar com a equipe trabalhista
           </a>
           <a href="https://www.instagram.com/reis_adv/" class="btn-ghost" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              aria-hidden="true">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-            </svg>
-            Ver conteúdos no Instagram
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            Conhecer conteúdos trabalhistas
           </a>
         </div>
       </div>
@@ -1888,10 +2005,8 @@
               <div class="logo-text">Reis Advogados Associados</div><span class="logo-sub">Advocacia Trabalhista</span>
             </div>
           </a>
-          <p>Escritório especializado em Direito Trabalhista com sede em Belém/PA e atendimento online para
-            trabalhadores em todo o Brasil.</p>
-          <p class="footer-legal">As informações deste site têm caráter informativo e não substituem a análise
-            individualizada de um advogado. A contratação de serviços jurídicos não implica garantia de resultado.</p>
+          <p>Direito trabalhista sem complicações. Orientação segura para trabalhadores de todo o Brasil.</p>
+          <p class="footer-legal">Informações educativas. A análise de um caso concreto exige avaliação profissional. Serviços jurídicos não garantem resultados.</p>
         </div>
         <div class="footer-col">
           <h4>Navegação</h4>
@@ -1946,7 +2061,14 @@
     </div>
   </footer>
 
-
+  <!-- MOBILE BAR -->
+  <div class="mobile-bar" role="complementary" aria-label="Botão fixo de contato">
+    <a href="https://wa.me/5591981088887?text=Ol%C3%A1%2C%20gostaria%20de%20enviar%20meu%20caso%20trabalhista%20para%20orienta%C3%A7%C3%A3o."
+      target="_blank" rel="noopener" aria-label="Enviar meu caso pelo WhatsApp">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Enviar meu caso pelo WhatsApp
+    </a>
+  </div>
 
   <script>
     const btn = document.getElementById('hamburger');
